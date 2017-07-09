@@ -1,0 +1,16 @@
+main { @include flex-container(); justify-content: center; height:99vh; align-content: center; align-items: center; position: relative; padding:1.5em;
+  .inner { max-width: 1200px; }
+}
+h3 { letter-spacing: 0.1em; text-transform: uppercase; font-weight: 400; display: block; }
+blockquote { display:block; padding:0 1em; position: relative; margin-top: 0.35em; margin-bottom: 1em;
+  &:before { content:'“'; @include position(absolute,0,null,null,0); font-size:240%; }
+  &:after  { content:'”'; }
+}
+.accent { display: block; padding:0 1em; margin-top: 0.35em; }
+
+@media screen and (max-width:1200px) {
+  blockquote, .accent { font-size:4vw; }
+}
+@media screen and (min-width:1201px) {
+  blockquote, .accent { font-size:3.1em; }
+}
