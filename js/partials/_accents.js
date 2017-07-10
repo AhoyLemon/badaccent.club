@@ -8,8 +8,7 @@ var allAccents = [
     cite: ["Scottish", "English", "Columbian"]
   },
   {
-    pick: "English"
-    
+    pick: "British"
   },
   {
     pick: "Transylvanian"
