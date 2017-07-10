@@ -2,9 +2,9 @@ main { @include flex-container(); justify-content: center; height:99vh; align-co
   .inner { max-width: 1200px; }
 }
 h3 { letter-spacing: 0.1em; text-transform: uppercase; font-weight: 400; display: block; }
-blockquote { display:block; padding:0 1em; position: relative; margin-top: 0.35em; margin-bottom: 1em;
-  &:before { content:'“'; @include position(absolute,0,null,null,0); font-size:240%; }
-  &:after  { content:'”'; }
+blockquote { display:block; padding:0 1em; position: relative; margin-top: 0.35em; margin-bottom: 1em; line-height: 1.3;
+  &:before { content:'“'; @include position(absolute,-0.25em,null,null,0); font-size:180%; font-family:"Times New Roman"; }
+  &:after  { content:'”'; font-family:"Times New Roman"; }
 }
 .accent { display: block; padding:0 1em; margin-top: 0.35em; }
 
