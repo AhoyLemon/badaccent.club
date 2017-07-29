@@ -35,9 +35,14 @@ function shuffle(array) {
   return array;
 }
 
-function newRound() {
-  var myQuote = allQuotes[Math.floor(Math.random() * allQuotes.length)];
-  var myAccent = allAccents[Math.floor(Math.random() * allAccents.length)];
-  $('#MyQuote').text(myQuote.text);
-  $('#MyAccent').text(myAccent.pick);
+function getChildren(n, skipMe){
+  var r = [];
+  for ( ; n; n = n.nextSibling ) 
+     if ( n.nodeType == 1 && n != skipMe)
+        r.push( n );        
+  return r;
+}
+
+function getSiblings(n) {
+  return getChildren(n.parentNode.firstChild, n);
 }
