@@ -35,6 +35,10 @@ button { color:$body; font-size:2vw; background-color:$link;  border:2px solid $
     h4 { margin-top: 2em; margin-bottom: 2em; font-weight: $medium; font-size:1.8em; }
   }
   
+  &.game-over {
+    h2 { text-align: center; margin-bottom: 1em; font-size:5vw; }
+  }
+  
 }
 
 

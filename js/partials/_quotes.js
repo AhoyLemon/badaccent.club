@@ -67,4 +67,12 @@ var allQuotes = [
     text: "Every word is like an unnecessary stain on silence and nothingness.",
     cite: "Samuel Beckett"
   },
+  {
+    text: "A committee is a group that keeps minutes and loses hours.",
+    cite: "Milton Berle"
+  },
+  {
+    text: "It's not the size of the dog in the fight, it's the size of the fight in the dog",
+    cite: "Mark Twain"
+  },
 ];

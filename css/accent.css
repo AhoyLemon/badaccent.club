@@ -374,6 +374,10 @@ button {
       margin-bottom: 2em;
       font-weight: 400;
       font-size: 1.8em; }
+  .phase.game-over h2 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 5vw; }
 
 @media screen and (max-width: 767px) {
   h3 {
@@ -567,12 +571,12 @@ header {
     fill: #dddcca; }
   .sidebar-button:hover svg .fill {
     opacity: 1; }
-  .sidebar-button.is-active .x {
+  .sidebar-button.active .x {
     opacity: 1;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1); }
-  .sidebar-button.is-active .question-mark {
+  .sidebar-button.active .question-mark {
     opacity: 0;
     -webkit-transform: scale(0.1) " ";
     -ms-transform: scale(0.1) " ";

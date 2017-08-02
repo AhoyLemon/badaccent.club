@@ -5,7 +5,6 @@ var allAccents = [
   },
   {
     pick: "Indian",
-    wrong: ["Scottish", "English", "Columbian"]
   },
   {
     pick: "British"
@@ -39,5 +38,14 @@ var allAccents = [
   },
   {
     pick: "Italian"
+  },
+  {
+    pick: "Irish"
+  },
+  {
+    pick: "Turkish"
+  },
+  {
+    pick: "Swedish"
   }
 ];

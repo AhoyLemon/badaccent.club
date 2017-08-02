@@ -1,6 +1,6 @@
-- var siteTitle = "🗨️ Bad Accent Club 🗨️" 
+- var siteTitle = "Bad Accent Club" 
 - var siteURL = "http://badaccent.club"
-- var description = "The game where your friends find out you can't do any accents"
+- var description = "The game where you find out none of your freinds are good at accents"
 - var launchDate = "2017-08-02"
 - var d = new Date()
 - var lastUpdated = d.getFullYear() + '-' + (d.getMonth()<10?'0':'') + d.getMonth() + '-' + (d.getDate()<10?'0':'') + d.getDate() + '@' + (d.getHours()<10?'0':'') + d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes() + ':' + (d.getSeconds()<10?'0':'') + d.getSeconds()
@@ -36,6 +36,9 @@ html(lang="en")
           h4 That was (apparently) a {{current.accent}} accent.
           .button-holder
             button(type="button" v-on:click="newRound") Okay, my turn.
+        .phase.game-over(v-cloak v-if="phase == 'game over'")
+          h2 Game over.
+          h3 (we ran out of accents)
         
   
     include partials/_javascripts.pug

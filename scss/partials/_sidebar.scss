@@ -12,7 +12,7 @@
       .fill { opacity: 1; }
     }
   }
-  &.is-active {
+  &.active {
     .x { opacity: 1; transform: scale(1); }
     .question-mark { opacity: 0; transform: scale(0.1)' '}
   }

@@ -9,7 +9,8 @@ var app = new Vue({
       quote: '',
       accent: '',
       choices: [],
-      badguess: ''
+      badguess: '',
+      gameover: false,
     },
     previous: {
       quotes: [],
@@ -40,7 +41,8 @@ var app = new Vue({
         if (this.previous.reRoll < 5) {
           this.getQuote();
         } else {
-          alert('GAME OVER (OUT OF QUOTES)');
+          this.phase = "game over";
+          this.current.gameover = "(we ran out of quotes)";
         }
       } else {
         this.current.cite = allQuotes[rQ].cite;
@@ -54,7 +56,8 @@ var app = new Vue({
         if (this.previous.reRoll < 5) {
           this.getAccent();
         } else {
-          alert('GAME OVER (OUT OF ACCENTS)');
+          this.phase = "game over";
+          this.current.gameover = "(we ran out of accents)";
         }
       } else {
         // Do nothing
@@ -132,6 +135,5 @@ var app = new Vue({
       this.browser = "chrome";
     }
     console.log('device: '+device+'. browser:'+browser);
-    
   }
 });

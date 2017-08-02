@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>🗨️ Bad Accent Club 🗨️</title>
+    <title>Bad Accent Club</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton|Quattrocento">
-    <link rel="stylesheet" href="css/accent.css?v=2017-07-02@15:20:09">
+    <link rel="stylesheet" href="css/accent.css?v=2017-07-02@15:51:40">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The game where your friends find out you can't do any accents">
-    <meta http-equiv="last-modified" content="2017-07-02@15:20:09">
+    <meta name="description" content="The game where you find out none of your freinds are good at accents">
+    <meta http-equiv="last-modified" content="2017-07-02@15:51:40">
     <!-- favicons-->
     <link rel="apple-touch-icon" sizes="57x57" href="http://badaccent.club/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="http://badaccent.club/apple-touch-icon-60x60.png">
@@ -29,23 +29,23 @@
     <!-- Twitter-->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@AhoyLemon">
-    <meta name="twitter:title" content="🗨️ Bad Accent Club 🗨️">
-    <meta name="twitter:description" content="The game where your friends find out you can't do any accents">
+    <meta name="twitter:title" content="Bad Accent Club">
+    <meta name="twitter:description" content="The game where you find out none of your freinds are good at accents">
     <meta name="twitter:image" content="http://badaccent.club/img/og-image.jpg">
     <meta name="twitter:url" content="http://badaccent.club">
     <!-- OpenGraph-->
-    <meta property="og:title" content="🗨️ Bad Accent Club 🗨️">
+    <meta property="og:title" content="Bad Accent Club">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://badaccent.club">
     <meta property="og:image" content="http://badaccent.club/img/og-image.jpg">
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="600">
-    <meta property="og:description" content="The game where your friends find out you can't do any accents">
+    <meta property="og:description" content="The game where you find out none of your freinds are good at accents">
     <meta property="og:email" content="lemon@thefpl.us">
   </head>
   <body>
     <div id="app">
-      <button class="sidebar-button" v-on:click="toggleSidebar()">
+      <button class="sidebar-button" v-on:click="toggleSidebar()" v-bind:class=" {active: sidebarVisible} ">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
           <circle class="fill" cx="50.6" cy="49.7" r="42"></circle>
           <path class="outline" d="M50 96C24.6 96 4 75.4 4 50S24.6 4 50 4s46 20.6 46 46-20.6 46-46 46zm0-86.2C27.8 9.8 9.8 27.8 9.8 50s18 40.3 40.2 40.3S90.3 72.2 90.3 50 72.2 9.8 50 9.8z"></path>
@@ -91,16 +91,20 @@
             <button type="button" v-on:click="newRound">Okay, my turn.</button>
           </div>
         </div>
+        <div class="phase game-over" v-cloak v-if="phase == 'game over'">
+          <h2>Game over.</h2>
+          <h3>(we ran out of accents)</h3>
+        </div>
       </main>
     </div>
     <script src="https://unpkg.com/vue"></script>
-    <script src="js/min/badaccent.min.js?v=2017-07-02@15:20:09"></script>
+    <script src="js/min/badaccent.min.js?v=2017-07-02@15:51:40"></script>
     <script type="text/javascript">// Google Analytics</script>
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
         "@type": "WebSite",
-        "name": "🗨️ Bad Accent Club 🗨️",
+        "name": "Bad Accent Club",
         "url": "http://badaccent.club",
         "alternateName": [
           "2UNLIMITED",
@@ -109,7 +113,7 @@
           "2 unlimited"
         ],
         "image": "http://badaccent.club/img/og-image.png",
-        "description": "The game where your friends find out you can't do any accents",
+        "description": "The game where you find out none of your freinds are good at accents",
         "inLanguage": "English",
         "sameAs": "https://thefpl.us/also-made/2un-ltd",
         "author": {
