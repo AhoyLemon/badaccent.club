@@ -5,27 +5,32 @@
     <title>♣️ BAD ACCENT CLUB ♣️</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton|Quattrocento">
-    <link rel="stylesheet" href="css/accent.css?v=2017-06-28@10:06:44">
+    <link rel="stylesheet" href="css/accent.css?v=2017-07-02@14:58:54">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The game thjat bla bla bla">
-    <meta http-equiv="last-modified" content="2017-06-28@10:06:44">
+    <meta name="description" content="The game where your friends find out you can't do any accents">
+    <meta http-equiv="last-modified" content="2017-07-02@14:58:54">
     <!-- favicons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="http://badaccent.club/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="http://badaccent.club/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="http://badaccent.club/favicon-194x194.png" sizes="194x194">
-    <link rel="icon" type="image/png" href="http://badaccent.club/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="http://badaccent.club/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="http://badaccent.club/manifest.json">
-    <link rel="mask-icon" href="http://badaccent.club/safari-pinned-tab.svg" color="#c54286">
-    <meta name="msapplication-TileColor" content="#c54286">
-    <meta name="msapplication-TileImage" content="http://badaccent.club/mstile-144x144.png">
-    <meta name="theme-color" content="#c54286">
+    <link rel="apple-touch-icon" sizes="57x57" href="http://badaccent.club/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="http://badaccent.club/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://badaccent.club/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://badaccent.club/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://badaccent.club/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://badaccent.club/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="http://badaccent.club/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://badaccent.club/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="http://badaccent.club/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="http://badaccent.club/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="http://badaccent.club/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="http://badaccent.club/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f89b1a">
+    <meta name="theme-color" content="#f89b1a">
     <!--social-->
     <!-- Twitter-->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:creator" content="@AhoyLemon">
     <meta name="twitter:title" content="♣️ BAD ACCENT CLUB ♣️">
-    <meta name="twitter:description" content="The game thjat bla bla bla">
+    <meta name="twitter:description" content="The game where your friends find out you can't do any accents">
     <meta name="twitter:image" content="http://badaccent.club/img/og-image.png">
     <meta name="twitter:url" content="http://badaccent.club">
     <!-- OpenGraph-->
@@ -35,45 +40,61 @@
     <meta property="og:image" content="http://badaccent.club/img/og-image.png">
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="600">
-    <meta property="og:description" content="The game thjat bla bla bla">
+    <meta property="og:description" content="The game where your friends find out you can't do any accents">
     <meta property="og:email" content="lemon@thefpl.us">
   </head>
   <body>
-    <!-- include partials/_sidebar.pug-->
-    <main id="app">
-      <div class="phase quote" v-cloak v-if="phase == 'quote'">
-        <h3>Read this quote:</h3>
-        <blockquote v-text="current.quote"></blockquote>
-        <h3>In this accent:</h3><strong class="accent" v-text="current.accent"></strong>
-        <div class="button-holder">
-          <button type="button" v-on:click="phase = 'pass'">Alright, did that.</button>
-        </div>
+    <div id="app">
+      <button class="sidebar-button" v-on:click="toggleSidebar()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+          <circle class="fill" cx="50.6" cy="49.7" r="42"></circle>
+          <path class="outline" d="M50 96C24.6 96 4 75.4 4 50S24.6 4 50 4s46 20.6 46 46-20.6 46-46 46zm0-86.2C27.8 9.8 9.8 27.8 9.8 50s18 40.3 40.2 40.3S90.3 72.2 90.3 50 72.2 9.8 50 9.8z"></path>
+          <path class="question-mark" d="M47.6 58.9c-.6-.7-.9-1.6-.9-2.8 0-2.4.4-4.3 1.3-5.9.9-1.6 2.1-3.3 3.8-5.2 1.2-1.4 2.2-2.6 2.7-3.6.6-.9.9-2 .9-3.2 0-1.3-.5-2.3-1.4-3.1-1-.7-2.3-1.1-3.9-1.1-1.5 0-2.9.3-4.1.9-1.3.6-3 1.5-5.1 2.8-1.3.7-2.4 1.1-3.3 1.1-1 0-1.8-.4-2.5-1.3s-1-1.9-1-3.1c0-.8.1-1.5.5-2.1.3-.6.8-1.1 1.4-1.6 2-1.6 4.4-2.9 7-3.8 2.7-.9 5.3-1.4 8-1.4 2.9 0 5.4.5 7.7 1.5s4.1 2.4 5.3 4.2c1.3 1.8 1.9 3.8 1.9 6 0 1.7-.3 3.3-1 4.7-.7 1.4-1.5 2.6-2.4 3.7-.9 1-2.2 2.3-3.7 3.8-1.8 1.6-3.1 3-4 4.1-.9 1.1-1.4 2.3-1.7 3.6-.2.9-.6 1.6-1.1 2-.6.5-1.3.7-2.1.7-1 .1-1.8-.2-2.3-.9zm-1.7 14.8c-1.1-1.1-1.7-2.6-1.7-4.3 0-1.7.6-3.1 1.7-4.3s2.5-1.7 4.2-1.7c1.7 0 3 .6 4.2 1.7 1.1 1.1 1.7 2.6 1.7 4.3 0 1.7-.6 3.1-1.7 4.3-1.1 1.1-2.5 1.7-4.2 1.7-1.7 0-3.1-.5-4.2-1.7z"></path>
+          <path class="x" d="M70.3 69c0 1.3-.5 2.4-1.5 3.3-1 .9-2.1 1.4-3.4 1.4-1.3 0-2.4-.6-3.4-1.7L49.6 56.9 37 72.1c-1 1.1-2.1 1.7-3.4 1.7-1.2 0-2.3-.5-3.3-1.4-1-.9-1.5-2.1-1.5-3.3 0-1.1.4-2.1 1.2-3L43.5 50l-13-15.8c-.8-1-1.3-2-1.3-3 0-1.3.5-2.4 1.5-3.3 1-.9 2.1-1.4 3.3-1.4 1.3 0 2.5.6 3.4 1.7l12.1 14.6 12-14.6c1-1.1 2.1-1.7 3.4-1.7 1.2 0 2.3.5 3.3 1.4 1 .9 1.5 2.1 1.5 3.3 0 1.1-.4 2.1-1.2 3l-13 15.6L69 65.9c.9 1 1.3 2 1.3 3.1z"></path>
+        </svg>
+      </button>
+      <div class="sidebar" v-bind:class=" {visible: sidebarVisible} ">
+        <ul>
+          <li><span class="label">This site was made by</span><span class="indent"><a href="http://ahoylemon.xyz" target="blank" onclick="sendGA('outside link', 'http://ahoylemon.xyz')">Lemon</a></span></li>
+          <li> <span class="label">based on a drunken dare.</span></li>
+          <li> <span class="label">There's more info on the</span><span class="indent"><a href="https://github.com/AhoyLemon/badaccent.club#readme" target="blank" onclick="sendGA('outside link', 'https://github.com/AhoyLemon/2un.ltd')">GitHub page</a></span></li>
+        </ul>
       </div>
-      <div class="phase pass" v-cloak v-if="phase == 'pass'">
-        <h3>Pass this to your friend.</h3>
-        <div class="button-holder">
-          <button type="button" v-on:click="phase = 'guess'">Okay, I'm the friend.</button>
+      <main>
+        <div class="phase quote" v-cloak v-if="phase == 'quote'">
+          <h3>Read this quote:</h3>
+          <blockquote v-text="current.quote"></blockquote>
+          <h3>In this accent:</h3><strong class="accent" v-text="current.accent"></strong>
+          <div class="button-holder">
+            <button type="button" v-on:click="phase = 'pass'">Alright, did that.</button>
+          </div>
         </div>
-      </div>
-      <div class="phase guess" v-cloak v-if="phase == 'guess'">
-        <h3>So, what accent was that?</h3>
-        <div class="buttons">
-          <button v-for="(choice,index) in current.choices" v-on:click="accentGuess(choice,index)" v-bind:disabled="guesses[index]">{{choice}}</button>
+        <div class="phase pass" v-cloak v-if="phase == 'pass'">
+          <h3>Pass this to your friend.</h3>
+          <div class="button-holder">
+            <button type="button" v-on:click="phase = 'guess'">Okay, I'm the friend.</button>
+          </div>
         </div>
-        <div class="incorrect">
-          <h2>&nbsp;<span v-if="current.badguess">{{current.badguess}}</span></h2>
+        <div class="phase guess" v-cloak v-if="phase == 'guess'">
+          <h3>So, what accent was that?</h3>
+          <div class="buttons">
+            <button v-for="(choice,index) in current.choices" v-on:click="accentGuess(choice,index)" v-bind:disabled="guesses[index]">{{choice}}</button>
+          </div>
+          <div class="incorrect">
+            <h2>&nbsp;<span v-if="current.badguess">{{current.badguess}}</span></h2>
+          </div>
         </div>
-      </div>
-      <div class="phase correct" v-cloak v-if="phase == 'correct'">
-        <h2>Yes!</h2>
-        <h4>That was (apparently) a {{current.accent}} accent.</h4>
-        <div class="button-holder">
-          <button type="button" v-on:click="newRound">Okay, my turn.</button>
+        <div class="phase correct" v-cloak v-if="phase == 'correct'">
+          <h2>Yes!</h2>
+          <h4>That was (apparently) a {{current.accent}} accent.</h4>
+          <div class="button-holder">
+            <button type="button" v-on:click="newRound">Okay, my turn.</button>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
     <script src="https://unpkg.com/vue"></script>
-    <script src="js/min/badaccent.min.js?v=2017-06-28@10:06:44"></script>
+    <script src="js/min/badaccent.min.js?v=2017-07-02@14:58:54"></script>
     <script type="text/javascript">// Google Analytics</script>
     <script type="application/ld+json">
       {
@@ -88,7 +109,7 @@
           "2 unlimited"
         ],
         "image": "http://badaccent.club/img/og-image.png",
-        "description": "The game thjat bla bla bla",
+        "description": "The game where your friends find out you can't do any accents",
         "inLanguage": "English",
         "sameAs": "https://thefpl.us/also-made/2un-ltd",
         "author": {

@@ -1,7 +1,7 @@
 - var siteTitle = "♣️ BAD ACCENT CLUB ♣️"
 - var siteURL = "http://badaccent.club"
-- var description = "The game thjat bla bla bla"
-- var launchDate = ""
+- var description = "The game where your friends find out you can't do any accents"
+- var launchDate = "2017-08-02"
 - var d = new Date()
 - var lastUpdated = d.getFullYear() + '-' + (d.getMonth()<10?'0':'') + d.getMonth() + '-' + (d.getDate()<10?'0':'') + d.getDate() + '@' + (d.getHours()<10?'0':'') + d.getHours() + ':' + (d.getMinutes()<10?'0':'') + d.getMinutes() + ':' + (d.getSeconds()<10?'0':'') + d.getSeconds()
 
@@ -10,31 +10,32 @@ html(lang="en")
   head
     include partials/_head.pug
   body
-    // include partials/_sidebar.pug
-    main#app
-      .phase.quote(v-cloak v-if="phase == 'quote'")
-        h3 Read this quote:
-        blockquote(v-text="current.quote")
-        h3 In this accent:
-        strong.accent(v-text="current.accent")
-        .button-holder
-          button(type="button" v-on:click="phase = 'pass'") Alright, did that.
-      .phase.pass(v-cloak v-if="phase == 'pass'")
-        h3 Pass this to your friend.
-        .button-holder
-          button(type="button" v-on:click="phase = 'guess'") Okay, I'm the friend.
-      .phase.guess(v-cloak v-if="phase == 'guess'")
-        h3 So, what accent was that?
-        .buttons()
-          button(v-for="(choice,index) in current.choices" v-on:click="accentGuess(choice,index)" v-bind:disabled="guesses[index]") {{choice}}
-        .incorrect
-          h2 &nbsp;
-            span(v-if="current.badguess") {{current.badguess}}
-      .phase.correct(v-cloak v-if="phase == 'correct'")
-        h2 Yes!
-        h4 That was (apparently) a {{current.accent}} accent.
-        .button-holder
-          button(type="button" v-on:click="newRound") Okay, my turn.
+    #app
+      include partials/_sidebar.pug
+      main
+        .phase.quote(v-cloak v-if="phase == 'quote'")
+          h3 Read this quote:
+          blockquote(v-text="current.quote")
+          h3 In this accent:
+          strong.accent(v-text="current.accent")
+          .button-holder
+            button(type="button" v-on:click="phase = 'pass'") Alright, did that.
+        .phase.pass(v-cloak v-if="phase == 'pass'")
+          h3 Pass this to your friend.
+          .button-holder
+            button(type="button" v-on:click="phase = 'guess'") Okay, I'm the friend.
+        .phase.guess(v-cloak v-if="phase == 'guess'")
+          h3 So, what accent was that?
+          .buttons()
+            button(v-for="(choice,index) in current.choices" v-on:click="accentGuess(choice,index)" v-bind:disabled="guesses[index]") {{choice}}
+          .incorrect
+            h2 &nbsp;
+              span(v-if="current.badguess") {{current.badguess}}
+        .phase.correct(v-cloak v-if="phase == 'correct'")
+          h2 Yes!
+          h4 That was (apparently) a {{current.accent}} accent.
+          .button-holder
+            button(type="button" v-on:click="newRound") Okay, my turn.
         
   
     include partials/_javascripts.pug

@@ -3,6 +3,8 @@ var app = new Vue({
   el: '#app',
   data: {
     phase: 'quote',
+    device: '',
+    browser: '',
     current: {
       quote: '',
       accent: '',
@@ -14,7 +16,8 @@ var app = new Vue({
       accents: [],
       reRoll: 0
     },
-    guesses: [false,false,false,false]
+    guesses: [false,false,false,false],
+    sidebarVisible: false
   },
   methods: {
     newRound: function() {
@@ -81,9 +84,54 @@ var app = new Vue({
         this.current.badguess = "";
         this.phase = "correct";
       }
+    },
+    toggleSidebar: function() {
+      if (this.sidebarVisible === true) {
+        this.sidebarVisible = false;
+      } else {
+        this.sidebarVisible = true;
+      }
     }
   },
   mounted: function() {
     this.newRound();
+    var ua = navigator.userAgent.toLowerCase();
+    //console.log(ua);
+    
+    if (ua.indexOf("android") > -1) {
+      this.device = "android";
+      if (ua.indexOf("firefox") > -1) {
+        // Android Firefox
+        this.browser="firefox";
+      } else if (ua.indexOf("opr") > -1) {
+        // Android Opera
+        this.browser="opera";
+      } else if (ua.indexOf("chrome") > -1) {
+        // Android Chrome
+        this.browser="chrome";
+      }
+    } else if (ua.indexOf('iphone') > -1 || ua.indexOf('ipad') > -1 || ua.indexOf('ipod') > -1) {
+      this.device = "ios";
+    } else if (ua.indexOf('windows') > -1) {
+      this.device = "windows";
+      if (ua.indexOf("edge") > -1) {
+        this.browser = "edge";
+      } else if (ua.indexOf("trident") > -1) {
+        this.browser = "ie";
+      } else if (ua.indexOf('firefox') > -1) {
+        this.browser = "firefox";
+      } else if (ua.indexOf('opr') > -1) {
+        this.browser = "opera";
+      } else if (ua.indexOf('chrome') > -1) {
+        this.browser = "chrome";
+      }
+    } else if (ua.indexOf('firefox') > -1) {
+      this.browser = "firefox";
+    } else if (ua.indexOf('chrome') > -1) {
+      this.device = "unknown";
+      this.browser = "chrome";
+    }
+    console.log('device: '+device+'. browser:'+browser);
+    
   }
 });
