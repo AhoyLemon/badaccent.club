@@ -1,31 +1,62 @@
 script(type="application/ld+json").
   {
     "@context": "http://schema.org",
-    "@type": "WebSite",
+    "@type": "VideoGame",
     "name": "#{siteTitle}",
     "url": "#{siteURL}",
-    "alternateName": [
-      "2UNLIMITED",
-      "2un.limited",
-      "2un.ltd",
-      "2 unlimited"
-    ],
+    //"sameAs": "#{fplusURL}",
     "image": "#{siteURL}/img/og-image.png",
+    "playMode": "MultiPlayer",
+    "applicationCategory": "browser game",
+    "gamePlatform": "web browser",
+    "operatingSystem": "web browser",
+    "genre": "guessing game",
     "description": "#{description}",
     "inLanguage": "English",
-    "sameAs": "https://thefpl.us/also-made/2un-ltd",
-    "author": {
+    "creator": {
       "@type": "Person",
       "name": "Lemon",
       "url": "http://ahoylemon.xyz",
       "sameAs": [
         "https://thefpl.us/meet/lemon",
         "https://twitter.com/AhoyLemon"
-      ]
+      ] 
     },
     "publisher": {
       "@type": "PerformingGroup",
       "name": "The F Plus",
       "url": "https://thefpl.us"
-    }
+    },
+    "offers": {
+      "@type": "Offer",
+      "description": "free",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "screenshot": [
+      {
+        "@type": "ImageObject",
+        "url": "#{siteURL}/img/screenshots/ss1.jpg",
+        "width": "800",
+        "height": "800"
+      },
+      {
+        "@type": "ImageObject",
+        "url": "#{siteURL}/img/screenshots/ss2.jpg",
+        "width": "800",
+        "height": "800"
+      },
+      {
+        "@type": "ImageObject",
+        "url": "#{siteURL}/img/screenshots/ss3.jpg",
+        "width": "800",
+        "height": "800"
+      },
+      {
+        "@type": "ImageObject",
+        "url": "#{siteURL}/img/screenshots/ss4.jpg",
+        "width": "800",
+        "height": "800"
+      }
+    ]
   }

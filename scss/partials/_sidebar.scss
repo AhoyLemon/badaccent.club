@@ -21,7 +21,7 @@
 .sidebar { @include position(fixed,$header-height,0); background: $black; color:$white; width: 14rem; padding: 1rem; z-index: $z-sidebar; border-left:1px solid $body; border-bottom:1px solid $body;
   ul { padding: 0; }
   li { margin-bottom: 0.65em; list-style: none; }
-  .label { display: block; line-height: 90% }
+  .label { display: block; line-height: 145% }
   .indent { display: block; padding-left: 1em; font-weight: $bold; }
   a { color:$red; text-decoration: none; cursor: pointer; 
     &:hover { text-decoration: underline; }
