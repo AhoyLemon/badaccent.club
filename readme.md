@@ -4,10 +4,10 @@
 ## What?
 This is a game that has you read randomly generated quotes in randomly generated accents.
 
-## Isn't that racist?
+## Is that racist?
 No.
 
-## Are you sure? It feels really weird to try to come up with accents.
+## Are you sure? It feels really weird to talk in these accents.
 Yeah, that's the point here.
 
 ## Who made this?
