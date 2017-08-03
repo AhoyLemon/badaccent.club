@@ -2,3 +2,4 @@
 //@prepros-prepend partials/_quotes.js
 //@prepros-prepend partials/_functions.js
 //@prepros-prepend partials/_vue.js
+//@prepros-prepend partials/_components.js

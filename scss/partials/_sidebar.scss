@@ -31,7 +31,22 @@
   &.visible { transform:translateX(0); }
 }
 
-.homescreen-help-holder {  background:$yellow; color:$black; z-index:$z-homescreenbox; display: none;
+.homescreen-help-holder { background-color:rgba($body,0.9); @include position(fixed,0,0,0,0); z-index:$z-favorite-box;
+  .homescreen-help { background:white; color:$black; @include position(fixed,0,0); padding:1em; }
+  svg { fill:currentColor;
+    * { fill:currentColor; }
+  }
+  .help { text-align: right; line-height: 160%;
+    span { display: block; }
+    svg { width:0.8em; height: 0.8em; }
+  }
+  &.ios { top:auto; bottom:0; right: 0; left:0; width:100%; max-width: 100%;
+    .help { text-align: center; }
+  }
+  .button-holder { padding-top: 1em; text-align: center;
+    button { font-size:20px; }
+  }
+  /*
   &.android { @include position(fixed,0,0); max-width: 16em;
     .ios, .edge, .opera, .desktop-chrome { display: none; }
     b { display: block; }
@@ -62,6 +77,7 @@
   .button { color:$black; border:2px solid $black; padding:.25em 1em; cursor: pointer; display: inline-block; margin-top:0.5em; margin-bottom:0.5em;
     &:hover { color:$yellow; background:$black; border-color: $yellow; }
   }
+  */
 }
 
 

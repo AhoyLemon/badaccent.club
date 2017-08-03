@@ -18,7 +18,8 @@ var app = new Vue({
       reRoll: 0
     },
     guesses: [false,false,false,false],
-    sidebarVisible: false
+    sidebarVisible: false,
+    addToHomescreen: false
   },
   methods: {
     newRound: function() {
@@ -94,12 +95,19 @@ var app = new Vue({
       } else {
         this.sidebarVisible = true;
       }
+    },
+    iOScheck: function() {
+      if (this.device == 'ios') {
+        return true;
+      } else {
+        return false;
+      }
     }
   },
   mounted: function() {
     this.newRound();
     var ua = navigator.userAgent.toLowerCase();
-    //console.log(ua);
+    console.log(ua);
     
     if (ua.indexOf("android") > -1) {
       this.device = "android";
@@ -128,11 +136,16 @@ var app = new Vue({
       } else if (ua.indexOf('chrome') > -1) {
         this.browser = "chrome";
       }
-    } else if (ua.indexOf('firefox') > -1) {
-      this.browser = "firefox";
-    } else if (ua.indexOf('chrome') > -1) {
-      this.device = "unknown";
-      this.browser = "chrome";
+    } else if (ua.indexOf('mac') > -1) {
+      this.device = "mac";
+      
+      if (ua.indexOf('chrome') > -1) {
+        this.browser = "chrome";
+      } else if (ua.indexOf('safari') > -1) {
+        this.browser = "safari";
+      } else if (ua.indexOf('firefox') > -1) {
+        this.browser = "firefox";
+      }
     }
     console.log('device: '+device+'. browser:'+browser);
   }

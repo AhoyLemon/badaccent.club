@@ -75,4 +75,16 @@ var allQuotes = [
     text: "It's not the size of the dog in the fight, it's the size of the fight in the dog",
     cite: "Mark Twain"
   },
+  {
+    text: "It is the soothing thing about history that it does repeat itself.",
+    cite: "Gertrude Stein"
+  },
+  {
+    text: "No man is good enough to govern any woman without her consent.",
+    cite: "Susan B. Anthony"
+  },
+  {
+    text: "There is only one cure for gray hair. It was invented by a Frenchman. It is called the guillotine.",
+    cite: "P. G. Wodehouse"
+  },
 ];
