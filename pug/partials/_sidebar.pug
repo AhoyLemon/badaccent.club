@@ -37,7 +37,6 @@ button.sidebar-button(v-on:click="toggleSidebar()" v-bind:class=" {active: sideb
       
 .homescreen-help-holder(v-cloak v-if="addToHomescreen")
   .homescreen-help(v-bind:class=" { ios:iOScheck() } ")
-    | {{device}} : {{browser}}
     .help.android-help(v-if="device == 'android'")
       span
         | Tap the 
