@@ -5,10 +5,10 @@
     <title>Bad Accent Club</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton|Quattrocento">
-    <link rel="stylesheet" href="css/accent.css?v=2017-07-03@14:41:28">
+    <link rel="stylesheet" href="css/accent.css?v=2017-07-03@15:07:58">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The game where you find out none of your freinds are good at accents">
-    <meta http-equiv="last-modified" content="2017-07-03@14:41:28">
+    <meta http-equiv="last-modified" content="2017-07-03@15:07:58">
     <!-- favicons-->
     <link rel="apple-touch-icon" sizes="57x57" href="http://badaccent.club/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="http://badaccent.club/apple-touch-icon-60x60.png">
@@ -148,7 +148,7 @@
         </div>
         <div class="phase correct" v-cloak v-if="phase == 'correct'">
           <h2>Yes!</h2>
-          <h4>That was (apparently) a {{current.accent}} accent.</h4>
+          <h4>{{current.correctMessage}}</h4>
           <div class="button-holder">
             <button type="button" v-on:click="newRound">Okay, my turn.</button>
           </div>
@@ -160,7 +160,7 @@
       </main>
     </div>
     <script src="https://unpkg.com/vue"></script>
-    <script src="js/min/badaccent.min.js?v=2017-07-03@14:41:28"></script>
+    <script src="js/min/badaccent.min.js?v=2017-07-03@15:07:58"></script>
     <script type="text/javascript">// Google Analytics</script>
     <script type="application/ld+json">
       {

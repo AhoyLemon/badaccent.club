@@ -34,7 +34,7 @@ html(lang="en")
               span(v-if="current.badguess") {{current.badguess}}
         .phase.correct(v-cloak v-if="phase == 'correct'")
           h2 Yes!
-          h4 That was (apparently) a {{current.accent}} accent.
+          h4 {{current.correctMessage}}
           .button-holder
             button(type="button" v-on:click="newRound") Okay, my turn.
         .phase.game-over(v-cloak v-if="phase == 'game over'")

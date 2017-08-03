@@ -11,6 +11,7 @@ var app = new Vue({
       choices: [],
       badguess: '',
       gameover: false,
+      correctMessage: ""
     },
     previous: {
       quotes: [],
@@ -29,7 +30,6 @@ var app = new Vue({
       this.getAccent();
       this.current.choices = [this.current.accent];
       this.defineChoices();
-      
       this.previous.quotes.push(this.current.quote);
       this.previous.accents.push(this.current.accent);
       this.phase = 'quote';
@@ -78,12 +78,43 @@ var app = new Vue({
         shuffle(this.current.choices);
       }
     },
+    getCorrectMessage: function() {
+      var correctMessages = [
+        "That was supposed to be a "+this.current.accent+" accent.",
+        "Apparently that was a "+this.current.accent+" accent.",
+        "That was a "+this.current.accent+" accent, I guess?",
+        "Your friend was trying a "+this.current.accent+" accent."
+      ];
+      var rM = Math.floor(Math.random() * correctMessages.length);
+      this.current.correctMessage = correctMessages[rM];
+    },
+    getWrongMessage: function(guess) {
+      var wrongMessages = [
+        "Nope, not "+guess+".",
+        "No, that wasn't "+guess+".",
+        "No, not "+guess+".",
+        guess+"? No.",
+        "You think it was "+guess+"? No.",
+        "That wasn't "+guess+".",
+        guess+"? Guess again",
+        "Definitely not "+guess+".",
+        "It wasn't "+guess+".",
+        "You think that was "+guess+"? Guess again.",
+        "You thought it sounded like "+guess+"? No.",
+        "Did it actually sound "+guess+"? No.",
+        "You think "+guess+"? No."
+      ];
+      var rM = Math.floor(Math.random() * wrongMessages.length);
+      this.current.badguess = wrongMessages[rM];
+    },
     accentGuess: function(guess,num) {
       if (guess != this.current.accent) {
         this.guesses[num] = true;
+        this.getWrongMessage(guess);
         //event.target.disabled = true;
-        this.current.badguess = "Nope, not "+guess+".";
+        //this.current.badguess = "Nope, not "+guess+".";
       } else {
+        this.getCorrectMessage();
         this.guesses = [false,false,false,false];
         this.current.badguess = "";
         this.phase = "correct";
