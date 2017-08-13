@@ -164,6 +164,8 @@ var app = new Vue({
         this.browser = "firefox";
       } else if (ua.indexOf('opr') > -1) {
         this.browser = "opera";
+      } else if (ua.indexOf('vivaldi') > -1) {
+        this.browser = "vivaldi";
       } else if (ua.indexOf('chrome') > -1) {
         this.browser = "chrome";
       }
