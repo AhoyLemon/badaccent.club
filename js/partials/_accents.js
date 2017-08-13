@@ -66,6 +66,10 @@ var allAccents = [
   },{
     pick: "Swedish"
   },{
+    pick: "Mexican"
+  },{
+    pick: "Puerto Rican"
+  },{
     pick: "Minnesotan"
   }
 ];

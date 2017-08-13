@@ -9,7 +9,6 @@ blockquote { display:block; padding:0 1em; position: relative; margin-top: 0.35e
 .accent { display: block; padding:0 1em; margin-top: 0.35em; }
 
 button { color:$body; font-size:2vw; background-color:$link;  border:2px solid $link; font-family: 'Neuton', serif; cursor: pointer; padding: 0.1em 1em; outline:none;
-  //&:not([disabled]):hover { background-color:$link; color:$body;  }
   &:active { transform: scale(0.95); }
   &[disabled] { background-color:darken(desaturate($red,45%),8%); border-color:darken(desaturate($red,45%),8%); cursor:not-allowed; }
 }
