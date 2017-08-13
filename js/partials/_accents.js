@@ -1,8 +1,8 @@
 var allAccents = [
   {
-    pick: "Chinese",
+    pick: "Chinese"
   },{
-    pick: "Indian",
+    pick: "Indian"
   },{
     pick: "British"
   },{
@@ -65,5 +65,7 @@ var allAccents = [
     pick: "Nigerian"
   },{
     pick: "Swedish"
+  },{
+    pick: "Minnesotan"
   }
 ];
