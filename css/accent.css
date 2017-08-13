@@ -386,7 +386,7 @@ button {
   blockquote, .accent {
     font-size: 7vw; }
   button {
-    font-size: 5vw; }
+    font-size: 24px; }
   .phase.pass h3 {
     font-size: 10vw; }
   .phase.guess {

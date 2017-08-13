@@ -41,7 +41,7 @@ button { color:$body; font-size:2vw; background-color:$link;  border:2px solid $
 @media screen and (max-width:767px) {
   h3 { font-size:5vw; }
   blockquote, .accent { font-size:7vw; }
-  button { font-size:5vw; }
+  button { font-size:24px; }
   .phase {
     &.pass {
       h3 { font-size:10vw; }
