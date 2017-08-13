@@ -177,6 +177,9 @@ var app = new Vue({
       } else if (ua.indexOf('firefox') > -1) {
         this.browser = "firefox";
       }
+    } else if (ua.indexOf('cros') > -1) {
+      this.device = "chrome";
+      this.browser = "chrome";
     }
     console.log('device: '+device+'. browser:'+browser);
   }

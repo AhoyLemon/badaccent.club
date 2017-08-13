@@ -1,8 +1,10 @@
 var allQuotes = [
+  /*
   {
     text: "All is ephemeral—fame and the famous as well.",
     cite: "Marcus Aurelius"
   },
+  */
   {
     text: "I never forget a face, but in your case I'll be glad to make an exception.",
     cite: "Groucho Marx"
@@ -12,20 +14,12 @@ var allQuotes = [
     cite: "John Scalzi"
   },
   {
-    text: "There's no such thing as addiction, there's just things you enjoy doing more than life.",
-    cite: "Doug Stanhope"
-  },
-  {
     text: "Software is like sex: It's better when it's free",
     cite: "Linus Torvalds"
   },
   {
     text: "The face of a child can say it all, especially the mouth part of the face.",
     cite: "Jack Handey"
-  },
-  {
-    text: "The woods are lovely, dark and deep. But I have promises to keep, and miles to go before I sleep.",
-    cite: "Robert Frost"
   },
   {
     text: "Only two things are infinite: The Universe and human stupidity, and I'm not sure about the former.",
@@ -51,10 +45,12 @@ var allQuotes = [
     text: "Keep your face always toward the sunshine and the shadows will fall behind you",
     cite: "Walt Whitman"
   },
+  /*
   {
     text: "The most wasted of all days is one without laughter",
     cite: "e. e. cummings"
   },
+  */
   {
     text: "Dreams are often the most profound when they seem the most crazy.",
     cite: "Sigmund Freud"
@@ -86,5 +82,36 @@ var allQuotes = [
   {
     text: "There is only one cure for gray hair. It was invented by a Frenchman. It is called the guillotine.",
     cite: "P. G. Wodehouse"
+  },
+  
+  
+  
+  {
+    text: "Do not go gentle into that good night. Old age should burn and rave at close of day. Rage, rage against the dying of the light.",
+    cite: "Dylan Thomas"
+  },
+  {
+    text: "If you persisted long enough, the good luck usually came. Most people couldn't wait on the luck though, so so they quit.",
+    cite: "Charles Bukowski"
+  },
+  {
+    text: "They speak whatever is on their mind, they do whatever is in their pants. The boys I mean are not refined. They shake the mountains when they dance",
+    cite: "ee cuummings"
+  },
+  {
+    text: "This is the way the world ends; Not with a bang but a whimper",
+    cite: "T.S. Eliot"
+  },
+  {
+    text: "The woods are lovely, dark and deep. But I have promises to keep, and miles to go before I sleep.",
+    cite: "Robert Frost"
+  },
+  {
+    text: "The weight of the world is love. Under the burden of solitude, under the burden of dissatisfaction. The weight we carry is love.",
+    cite: "Allan Ginsburg"
+  },
+  {
+    text: "O' Captain my Captain! Our fearful trip is done. The ship has weathered every rack, the prize we sought is won.",
+    cite: "Walt Whitman"
   },
 ];

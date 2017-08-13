@@ -26,12 +26,13 @@ button.sidebar-button(v-on:click="toggleSidebar()" v-bind:class=" {active: sideb
       span.label There's more info on the
       span.indent
         a(href="https://github.com/AhoyLemon/badaccent.club#readme" target="blank" onclick="sendGA('outside link', 'https://github.com/AhoyLemon/2un.ltd')") GitHub page
-    li#AddToHomeScreen
+    li#AddToHomeScreen(v-if="device")
       span.label But first
       span.indent 
         a(style="font-weight:bold;" v-on:click="addToHomescreen = true")
           span(v-if="(device == 'android') || (device == 'ios')") add to home screen
           span(v-else-if="(browser == 'ie') || (browser == 'edge')") pin to start
+          span(v-else-if="device == 'chrome'") add to shelf
           span(v-else-if="browser == 'chrome'") add to desktop
           span(v-else-if="(device == 'mac') || (browser == 'firefox') || (browser == 'opera')") bookmark this
       
@@ -79,6 +80,11 @@ button.sidebar-button(v-on:click="toggleSidebar()" v-bind:class=" {active: sideb
         b More tools
         |  and 
         b Add to desktop
+      span(v-if="device == 'chrome'")
+        | Then choose 
+        b More tools 
+        | and 
+        b Add to shelf
     .help.safari-help(v-else-if="browser == 'safari'")
       span 
         svg.arrow.arrow-up(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100")

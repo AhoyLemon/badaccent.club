@@ -5,10 +5,10 @@
     <title>Bad Accent Club</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Neuton|Quattrocento">
-    <link rel="stylesheet" href="css/accent.css?v=2017-07-03@15:07:58">
+    <link rel="stylesheet" href="css/accent.css?v=2017-07-13@11:03:14">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The game where you find out none of your freinds are good at accents">
-    <meta http-equiv="last-modified" content="2017-07-03@15:07:58">
+    <meta http-equiv="last-modified" content="2017-07-13@11:03:14">
     <!-- favicons-->
     <link rel="apple-touch-icon" sizes="57x57" href="http://badaccent.club/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="http://badaccent.club/apple-touch-icon-60x60.png">
@@ -57,7 +57,7 @@
         <ul>
           <li><span class="label">This site was made by</span><span class="indent"><a href="http://ahoylemon.xyz" target="blank" onclick="sendGA('outside link', 'http://ahoylemon.xyz')">Lemon</a></span><span class="indent" style="font-weight:300;">after a night of drinking.</span></li>
           <li> <span class="label">There's more info on the</span><span class="indent"><a href="https://github.com/AhoyLemon/badaccent.club#readme" target="blank" onclick="sendGA('outside link', 'https://github.com/AhoyLemon/2un.ltd')">GitHub page</a></span></li>
-          <li id="AddToHomeScreen"><span class="label">But first</span><span class="indent"> <a style="font-weight:bold;" v-on:click="addToHomescreen = true"><span v-if="(device == 'android') || (device == 'ios')">add to home screen</span><span v-else-if="(browser == 'ie') || (browser == 'edge')">pin to start</span><span v-else-if="browser == 'chrome'">add to desktop</span><span v-else-if="(device == 'mac') || (browser == 'firefox') || (browser == 'opera')">bookmark this</span></a></span></li>
+          <li id="AddToHomeScreen" v-if="device"><span class="label">But first</span><span class="indent"> <a style="font-weight:bold;" v-on:click="addToHomescreen = true"><span v-if="(device == 'android') || (device == 'ios')">add to home screen</span><span v-else-if="(browser == 'ie') || (browser == 'edge')">pin to start</span><span v-else-if="device == 'chrome'">add to shelf</span><span v-else-if="browser == 'chrome'">add to desktop</span><span v-else-if="(device == 'mac') || (browser == 'firefox') || (browser == 'opera')">bookmark this</span></a></span></li>
         </ul>
       </div>
       <div class="homescreen-help-holder" v-cloak v-if="addToHomescreen">
@@ -86,7 +86,7 @@
               </svg> up there. 
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <path d="M89.5 41.1L54.9 3c-1.4-1.6-3.9-1.6-5.3 0L15 41c-2.3 2.6 0 6.6 3.4 5.9l21-4.2v50.4c0 2 1.6 3.6 3.6 3.6h18.2c2 0 3.6-1.6 3.6-3.6V42.7l21.5 4.2c3.2.9 5.5-3.3 3.2-5.8z"></path>
-              </svg></span><span v-if="device == 'windows'">Then choose <b>More tools</b> and <b>Add to desktop</b></span></div>
+              </svg></span><span v-if="device == 'windows'">Then choose <b>More tools</b> and <b>Add to desktop</b></span><span v-if="device == 'chrome'">Then choose <b>More tools </b>and <b>Add to shelf</b></span></div>
           <div class="help safari-help" v-else-if="browser == 'safari'"><span> 
               <svg class="arrow arrow-up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
                 <path d="M89.5 41.1L54.9 3c-1.4-1.6-3.9-1.6-5.3 0L15 41c-2.3 2.6 0 6.6 3.4 5.9l21-4.2v50.4c0 2 1.6 3.6 3.6 3.6h18.2c2 0 3.6-1.6 3.6-3.6V42.7l21.5 4.2c3.2.9 5.5-3.3 3.2-5.8z"></path>
@@ -160,7 +160,7 @@
       </main>
     </div>
     <script src="https://unpkg.com/vue"></script>
-    <script src="js/min/badaccent.min.js?v=2017-07-03@15:07:58"></script>
+    <script src="js/min/badaccent.min.js?v=2017-07-13@11:03:14"></script>
     <script type="text/javascript">// Google Analytics</script>
     <script type="application/ld+json">
       {

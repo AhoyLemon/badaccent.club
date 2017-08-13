@@ -12,8 +12,6 @@ var allAccents = [
   },{
     pick: "Russian"
   },{
-    pick: "Costa Rican"
-  },{
     pick: "Portugese"
   },{
     pick: "Spanish"
@@ -41,6 +39,30 @@ var allAccents = [
     pick: "South African"
   },{
     pick: "Cajun"
+  },{
+    pick: "Texan"
+  },{
+    pick: "German"
+  },{
+    pick: "Australian"
+  },{
+    pick: "Iranian"
+  },{
+    pick: "American"
+  },{
+    pick: "Brazilian"
+  },{
+    pick: "Mexican"
+  },{
+    pick: "Boston"
+  },{
+    pick: "Israeli"
+  },{
+    pick: "Scottish"
+  },{
+    pick: "Pakistani"
+  },{
+    pick: "Nigerian"
   },{
     pick: "Swedish"
   }
