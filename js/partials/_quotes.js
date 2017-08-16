@@ -1,10 +1,4 @@
 var allQuotes = [
-  /*
-  {
-    text: "All is ephemeral—fame and the famous as well.",
-    cite: "Marcus Aurelius"
-  },
-  */
   {
     text: "I never forget a face, but in your case I'll be glad to make an exception.",
     cite: "Groucho Marx"
@@ -45,12 +39,6 @@ var allQuotes = [
     text: "Keep your face always toward the sunshine and the shadows will fall behind you",
     cite: "Walt Whitman"
   },
-  /*
-  {
-    text: "The most wasted of all days is one without laughter",
-    cite: "e. e. cummings"
-  },
-  */
   {
     text: "Dreams are often the most profound when they seem the most crazy.",
     cite: "Sigmund Freud"
@@ -79,19 +67,22 @@ var allQuotes = [
     text: "No man is good enough to govern any woman without her consent.",
     cite: "Susan B. Anthony"
   },
+  
+  
   {
-    text: "There is only one cure for gray hair. It was invented by a Frenchman. It is called the guillotine.",
-    cite: "P. G. Wodehouse"
+    text: "How do I love thee? Let me count the ways. I love thee to the depth and breadth and height. My soul can reach, when feeling out of sight.",
+    cite: "Elizabeth Barrett Browning"
   },
-  
-  
-  
   {
-    text: "Do not go gentle into that good night. Old age should burn and rave at close of day. Rage, rage against the dying of the light.",
+    text: "How dreary to be somebody. How public, like a frog. To tell one’s name, the livelong June,  To an admiring Bog!",
+    cite: "Emily Dickenson"
+  },
+  {
+    text: "Do not go gentle into that good night. Rage, rage against the dying of the light.",
     cite: "Dylan Thomas"
   },
   {
-    text: "If you persisted long enough, the good luck usually came. Most people couldn't wait on the luck though, so so they quit.",
+    text: "The problem with the world is that the intelligent people are full of doubts, while the stupid ones are full of confidence.",
     cite: "Charles Bukowski"
   },
   {
