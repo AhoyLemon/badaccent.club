@@ -4,7 +4,10 @@ script(type="application/ld+json").
     "@type": "VideoGame",
     "name": "#{siteTitle}",
     "url": "#{siteURL}",
-    //"sameAs": "#{fplusURL}",
+    "sameAs": {
+      "#{fplusURL}",
+      "#{githubURL}"
+    ],
     "image": "#{siteURL}/img/og-image.png",
     "playMode": "MultiPlayer",
     "applicationCategory": "browser game",
