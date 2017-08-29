@@ -135,10 +135,10 @@ var app = new Vue({
       }
     }
   },
-  mounted: function() {
+  beforeMount: function() {
     this.newRound();
     var ua = navigator.userAgent.toLowerCase();
-    console.log(ua);
+    //console.log(ua);
     
     if (ua.indexOf("android") > -1) {
       this.device = "android";
@@ -183,6 +183,6 @@ var app = new Vue({
       this.device = "chrome";
       this.browser = "chrome";
     }
-    console.log('device: '+device+'. browser:'+browser);
+    //console.log('device: '+this.device+'. browser:'+this.browser);
   }
 });
