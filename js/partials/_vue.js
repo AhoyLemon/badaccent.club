@@ -11,7 +11,8 @@ var app = new Vue({
       choices: [],
       badguess: '',
       gameover: false,
-      correctMessage: ""
+      correctMessage: "",
+      round: 0
     },
     previous: {
       quotes: [],
@@ -33,6 +34,8 @@ var app = new Vue({
       this.previous.quotes.push(this.current.quote);
       this.previous.accents.push(this.current.accent);
       this.phase = 'quote';
+      this.current.round++;
+      sendEvent('Round', this.current.round);
     },
     getQuote: function() {
       var rQ = Math.floor(Math.random() * allQuotes.length);
@@ -44,9 +47,12 @@ var app = new Vue({
         } else {
           this.phase = "game over";
           this.current.gameover = "(we ran out of quotes)";
+          
         }
       } else {
+        // This is a quote that hasn't been played before.
         this.current.cite = allQuotes[rQ].cite;
+        sendEvent('Quote', this.current.quote);
       }
     },
     getAccent: function() {
@@ -61,7 +67,8 @@ var app = new Vue({
           this.current.gameover = "(we ran out of accents)";
         }
       } else {
-        // Do nothing
+        // This is an accent that hasn't been played before.
+        sendEvent('Accent', this.current.accent);
       }
     },
     defineChoices: function() {
