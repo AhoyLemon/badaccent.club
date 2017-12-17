@@ -15,3 +15,6 @@ Yeah, that's the point here.
 
 ## Oh, the guy who made damn.dog?
 [Yeah](http://damn.dog).
+
+## Is this an Android app?
+Yes. [It's right here](https://play.google.com/store/apps/details?id=club.badaccent).
