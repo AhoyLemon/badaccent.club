@@ -2,6 +2,7 @@
 - var siteURL = "http://badaccent.club"
 - var description = "The game where you find out none of your freinds are good at accents"
 - var launchDate = "2017-08-18"
+- var testing = true
 - var fplusURL = "https://thefpl.us/also-made/bad-accent-club"
 - var gitHubURL = "https://github.com/AhoyLemon/badaccent.club"
 - var d = new Date()
@@ -41,6 +42,10 @@ html(lang="en")
         .phase.game-over(v-cloak v-if="phase == 'game over'")
           h2 Game over.
           h3 (we ran out of accents)
+      
+      footer.download(v-bind:class="{visible: phase == 'correct'}")
+        a.play-link(href="https://play.google.com/store/apps/details?id=club.badaccent&hl=en")
+          img(src="svg/google-play-badge.svg")
         
       
   

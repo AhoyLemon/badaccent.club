@@ -244,7 +244,6 @@ main {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
   -webkit-flex-wrap: wrap;
@@ -253,18 +252,14 @@ main {
   flex-wrap: wrap;
   -webkit-box-align: strech;
   -ms-flex-align: strech;
-  -webkit-align-items: strech;
   align-items: strech;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
   height: 99vh;
-  -webkit-align-content: center;
   -ms-flex-line-pack: center;
   align-content: center;
   -webkit-box-align: center;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
   position: relative;
@@ -338,7 +333,6 @@ button {
       display: flex;
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
       -ms-flex-direction: row;
       flex-direction: row;
       -webkit-flex-wrap: wrap;
@@ -347,23 +341,18 @@ button {
       flex-wrap: wrap;
       -webkit-box-align: strech;
       -ms-flex-align: strech;
-      -webkit-align-items: strech;
       align-items: strech; }
       .phase.guess .buttons button {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 0.5em;
-        -webkit-flex-basis: 100%;
         -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
         -webkit-box-flex: 1;
-        -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
         flex-grow: 1;
-        -webkit-flex-shrink: 1;
         -ms-flex-negative: 1;
         flex-shrink: 1;
-        -webkit-align-self: auto;
         -ms-flex-item-align: auto;
         align-self: auto; }
   .phase.correct {
@@ -453,7 +442,6 @@ header {
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
     -webkit-flex-wrap: wrap;
@@ -462,21 +450,16 @@ header {
     flex-wrap: wrap;
     -webkit-box-align: strech;
     -ms-flex-align: strech;
-    -webkit-align-items: strech;
     align-items: strech;
     padding-top: 0.2rem; }
     header > .inner .box {
-      -webkit-flex-basis: 16.6%;
       -ms-flex-preferred-size: 16.6%;
       flex-basis: 16.6%;
       -webkit-box-flex: 1;
-      -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
       flex-grow: 1;
-      -webkit-flex-shrink: 1;
       -ms-flex-negative: 1;
       flex-shrink: 1;
-      -webkit-align-self: auto;
       -ms-flex-item-align: auto;
       align-self: auto;
       text-align: center;
@@ -705,3 +688,22 @@ header {
 @media all and (display-mode: standalone) {
   #AddToHomeScreen {
     display: none; } }
+
+footer.download {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  -webkit-transform: translateX(125%);
+  -ms-transform: translateX(125%);
+  transform: translateX(125%);
+  -webkit-transition: -webkit-transform 0.35s ease;
+  transition: -webkit-transform 0.35s ease;
+  -o-transition: transform 0.35s ease;
+  transition: transform 0.35s ease;
+  transition: transform 0.35s ease, -webkit-transform 0.35s ease; }
+  footer.download img {
+    width: 160px; }
+  footer.download.visible {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0); }

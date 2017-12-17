@@ -1,0 +1,5 @@
+footer.download { @include position(fixed,null,10px,10px);
+  img { width:160px; }
+  transform: translateX(125%); transition: transform 0.35s ease;
+  &.visible { transform: translateX(0); }
+}
