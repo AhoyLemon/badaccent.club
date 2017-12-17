@@ -1,17 +1,6 @@
 ![Bad Accent Club Logo](http://badaccent.club/img/og-image.jpg)
 ### The game where you find out none of your freinds are good at accents
 
-## What?
-This is a game that has you read randomly generated quotes in randomly generated accents.
+This is the phonegap (Native App) build of bad accent club, for distribution in the Google Play Store. [Listing here](https://play.google.com/store/apps/details?id=club.badaccent).
 
-## Is that racist?
-No.
-
-## Are you sure? It feels really weird to talk in these accents.
-Yeah, that's the point here.
-
-## Who made this?
-[Lemon](http://ahoylemon.xyz).
-
-## Oh, the guy who made damn.dog?
-[Yeah](http://damn.dog).
+For the web app, check out the [master branch](https://github.com/AhoyLemon/badaccent.club).
