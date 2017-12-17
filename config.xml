@@ -77,11 +77,5 @@
   
   <engine name="ios" spec="^4.4.0" />
   <engine name="android" spec="^6.3.0" />
-  
-  <plugin name="cordova-plugin-dialogs" spec="~1.2.0" />
-  <plugin name="cordova-plugin-file" spec="^4.3.3" />
-  <plugin name="cordova-plugin-globalization" spec="~1.0.3" />
-  <plugin name="cordova-plugin-whitelist" spec="~1.2.1" />
-  <gap:plugin name="cordova-plugin-x-socialsharing" source="npm" spec="5.2.1" />
 
 </widget>
